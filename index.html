@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- component -->
+    <div>
+        <div class="relative min-h-screen  grid bg-black ">
+            <div
+                class="flex flex-col sm:flex-row items-center md:items-start sm:justify-center md:justify-start flex-auto min-w-0 ">
+                <div
+                    class="md:flex md:items-center md:justify-left w-full sm:w-auto md:h-full xl:w-1/2 p-8  md:p-10 lg:p-14 sm:rounded-lg md:rounded-none ">
+                    <div class="max-w-xl w-full space-y-12">
+                        <div class="lg:text-left text-center">
+
+                            <div class="flex items-center justify-center ">
+                                <div class="bg-black flex flex-col w-80 border border-gray-900 rounded-lg px-8 py-10">
+
+                                    <form [formGroup]="createaccount" class="flex flex-col space-y-8 mt-10"
+                                        onsubmit="return formSubmit()">
+                                        <label class="font-bold text-lg text-white ">Product Name</label>
+                                        <input type="text" formControlName="proname" placeholder="Product Name"
+                                            class="border rounded-lg py-3 px-3 mt-4 bg-black border-indigo-600 placeholder-white-500 text-white"
+                                            id="proName">
+                                        <label class="font-bold text-lg text-white ">Product Modal</label>
+                                        <input type="text" formControlName="productModal" placeholder="Product Modal"
+                                            class="border rounded-lg py-3 px-3 mt-4 bg-black border-indigo-600 placeholder-white-500 text-white"
+                                            id="modalName">
+                                        <label class="font-bold text-lg text-white">Price</label>
+                                        <input type="number" formControlName="price" placeholder="Price in INR"
+                                            class="border rounded-lg py-3 px-3 bg-black border-indigo-600 placeholder-white-500 text-white"
+                                            id="price">
+                                        <button type="submit"
+                                            class="border border-indigo-600 bg-black text-white rounded-lg py-3 font-semibold"
+                                            routerLink="/dashboard">Buy</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- table -->
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg pt-24">
+                    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Product name
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Product modal
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Price
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Add to cart
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="data">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="js/script.js"></script>
+
+
+
+</body>
+
+</html>
